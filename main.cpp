@@ -1,6 +1,6 @@
 #include <stdio.h>
+#include <iostream>
 #include <stdlib.h>
-#include <conio.h>
 #include <cctype>
 #include <cstring>
 
@@ -129,9 +129,18 @@ int read(char str[], int n){
 			i++;
 		}
 	}
-	
+
 	chek[i] = ' ';
+	//Я пыталась исправить эту ошибку, но не вышло
+	//Переменная chek верно считывает символы, но по каким-то причинам даже если chek равно "circle ", функция strcmp(chek, "circle ") не равна нулю и как это исправить я не знаю
 	
+	
+	//puts(chek);
+	//printf("%d\n", strcmp(chek, "circle "));
+	
+	circle(str, n, i);
+	
+	/*
 	if(strcmp(chek, "circle ") == 0){
 		circle(str, n, i);
 	}else{
@@ -139,6 +148,7 @@ int read(char str[], int n){
 		printf("^\n");
 		printf("2.Error at column 0: expected 'circle'\n");
 	}
+	*/
 	return 0;
 	
 }
@@ -150,12 +160,13 @@ int main(){
 	int n=3;
 	int count=0;
 	char str[n][50];
-    int z=0, ch=0;
+	char chiortov_str[50] = "a";
+    	int z=0;
 	
-	while(ch!=13 && z!=n){
-		ch = getch();
-		gets(str[z]);
-        z++;
+	while(strcmp(chiortov_str,"") && z!=n){
+		std::cin.getline(chiortov_str, 50);
+		strcpy(str[z],chiortov_str);
+        	z++;
 	}
 	
 

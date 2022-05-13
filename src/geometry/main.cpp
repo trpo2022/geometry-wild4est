@@ -1,4 +1,5 @@
-#include <libgeometry/P_and_S.h>
+#include <libgeometry/P.h>
+#include <libgeometry/S.h>
 #include <libgeometry/intersection.h>
 
 
@@ -18,13 +19,17 @@ int main(){
     char chiortov_str[50] = "a";
     float coords[n][3];
     int z=0;
+    
+    
+    printf("Число запрашиваемых строк?: ");
+    scanf("%d", &n);
+    printf("\n");
 
-    while(strcmp(chiortov_str,"") && z!=n){
+    while(z!=n){
         std::cin.getline(chiortov_str, 50);
-        strcpy(str[z],chiortov_str);
+       	strcpy(str[z],chiortov_str);
         z++;
     }
-    
     
     for (int a=0; a<z; a++){
         int i=0;
@@ -151,7 +156,8 @@ int main(){
         count = a + 1;
         printf("%d. ", count);
         printf("circle(%f %f, %f)\n", coords[a][0], coords[a][1], coords[a][2]);
-        P_and_S(coords[a][2]);
+        printf("perimeter = %f\n", P(coords[a][2]));
+        printf("area = %f\n", S(coords[a][2]));
         
         while (i!=z){
             if (intersection(coords[a][0], coords[a][1], coords[a][2], coords[i][0], coords[i][1], coords[i][2])){

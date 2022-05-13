@@ -27,7 +27,7 @@ int main(){
     for (int a=0; a<z-1; a++){
         count = a + 1;
         printf("%d. ", count);
-        read(str[a], 50);
+        read(str[a]);
     }
 	
     return 0;

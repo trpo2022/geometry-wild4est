@@ -9,7 +9,7 @@
 
 
 
-int read(char str[], int n){
+int read(char str[]){
     puts(str);
     int i=0;
     int cheking_word = 0;

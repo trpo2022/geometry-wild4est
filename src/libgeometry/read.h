@@ -1,5 +1,5 @@
 #pragma once
 
-int read(char*, int);
+int read(char*);
 
 
